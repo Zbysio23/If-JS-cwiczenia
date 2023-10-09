@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+
+	<meta charset="utf-8">
+	<title>3 - Instrukcja warunkowa w JavaScript</title>
+	<link href="arkusz-cwiczenia.css" rel="stylesheet">
+	
+</head>
+
+<body>
+
+	P = ( <input type="number" id="x"> , <input type="number" id="y"> )
+
+	<input type="submit" value="Sprawdź ćwiartkę" onclick="ktora_cwiartka()">
+
+	<div id="wynik"></div>
+	
+	<script>
+	
+		function ktora_cwiartka()
+		{
+			var x = document.getElementById("x").value
+			var y = document.getElementById("y").value
+			napis = ""
+			if(x == 0 && y == 0){
+				napis = "Punkt P=(0,0) jest początkiem układu współrzędnych"
+			} else if(x == 0 || y == 0){
+				napis = "Punkt leży na jednej z osi układu"
+			} else if(x == 15 && y == 96){
+				napis = "a"
+			} else if(x > 0 && y > 0){
+				napis = "Punkt leży na 1 ćwiartce"
+			} else if(x < 0 && y > 0){
+				napis = "Punkt leży na 2 ćwiartce"
+			} else if(x < 0 && y < 0){
+				napis = "Punkt leży na 3 ćwiartce"
+			} else if(x > 0 && y < 0){
+				napis = "Punkt leży na 4 ćwiartce"
+			}
+			document.getElementById("wynik").innerHTML = napis;
+		}
+
+	</script>
+
+</body>
+</html>
